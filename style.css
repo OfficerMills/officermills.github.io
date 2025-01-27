@@ -1,0 +1,110 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+/* Container for the goal bar with a background image */
+.goal-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-image: url('https://i.imgur.com/Rw6xhMA.png'); /* Ensure the correct relative path to the background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    padding: 15px 20px;
+    color: #fff;
+    font-family: 'Russo One', Arial, sans-serif;
+    width: 446px; /* Adjusted width for the container */
+    height: 90px; /* Adjusted height for the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow for depth */
+    border: 2px solid red; /* Debug border (remove if not needed) */
+}
+
+/* Title styling */
+.goal-title {
+    color: #b3f303; /* Bright text color */
+    margin-left: 80px; /* Offset to align with the design */
+}
+
+/* Logo styling */
+.goal-bar-logo {
+    display: none; /* Hide the logo since it's part of the background */
+}
+
+/* Details section */
+.goal-bar-details {
+    flex-grow: 1;
+    margin-left: 65px; /* Push the progress bar section to the right */
+}
+
+/* Footer text */
+.goal-footer {
+    font-size: 18px;
+    text-align: right;
+    font-weight: bold;
+    color: #FF0000;
+}
+
+/* Header with title and progress */
+.goal-bar-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #37ae87;
+}
+
+/* Goal bar styling */
+.goal-bar {
+    position: relative;
+    width: 80%; /* Adjust the width of the progress bar */
+    height: 32px;
+    background-color: rgba(44, 44, 46, 0.8); /* Semi-transparent background */
+    border-radius: 20px;
+    overflow: hidden;
+    margin-left: auto; /* Align the progress bar to the right */
+}
+
+/* Center text inside the progress bar */
+.goal-progress-center-text {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.90); /* Black text for contrast */
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure it appears above the progress bar */
+    pointer-events: none; /* Prevent interactions with the text */
+}
+
+/* Adjust goal-bar-progress to ensure it's positioned correctly */
+.goal-bar-progress {
+    position: relative;
+    height: 100%;
+    background-color: #48ff24; /* Green progress bar */
+    border-radius: 8px 0 0 8px;
+    transition: width 0.3s ease;
+}
+
+/* Fading color for the progress text */
+.goal-progress-text {
+    font-weight: bold;
+    color: #ff0000; /* Start with red */
+    transition: color 0.3s ease;
+}
+
+/* Add color transitions based on progress */
+.goal-bar-container[data-progress="25"] .goal-progress-text {
+    color: #ff8000; /* Orange at 25% */
+}
+.goal-bar-container[data-progress="50"] .goal-progress-text {
+    color: #ffff00; /* Yellow at 50% */
+}
+.goal-bar-container[data-progress="75"] .goal-progress-text {
+    color: #80ff00; /* Light green at 75% */
+}
+.goal-bar-container[data-progress="100"] .goal-progress-text {
+    color: #00ff00; /* Bright green at 100% */
+}
